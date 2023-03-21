@@ -16,7 +16,7 @@ export function Content() {
     console.log("handleIndexPlants");
     axios.get("http://localhost:3000/plants.json").then((response) => {
       console.log(response.data);
-      setPlants(response.data);
+      setPlants(response.data); //response.data.data[then the array of plant details]
     });
   };
 
