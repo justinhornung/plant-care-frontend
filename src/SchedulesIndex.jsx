@@ -6,8 +6,8 @@ export function SchedulesIndex(props) {
         <div key={schedule.id}>
           <p>Plant: {schedule.plant.name}</p>
           <p>Owner: {schedule.user.name}</p>
-          <img src={schedule.image_url} />
           <p>Start: {schedule.watering_start_date} </p>
+          <button onClick={() => props.onShowSchedule(schedule)}>More info</button>
         </div>
       ))}
     </div>
