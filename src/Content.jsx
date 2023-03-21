@@ -51,7 +51,7 @@ export function Content() {
   useEffect(handleIndexSchedules, []);
 
   return (
-    <div>
+    <div className="container">
       <PlantsIndex plants={plants} />
       <SchedulesCreate onCreateSchedule={handleCreateSchedule} />
       <SchedulesIndex schedules={schedules} onShowSchedule={handleShowSchedule} />
