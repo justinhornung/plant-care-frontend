@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import { PlantsIndex } from "./PlantsIndex";
 import { SchedulesIndex } from "./SchedulesIndex";
 import { SchedulesCreate } from "./SchedulesCreate";
@@ -16,7 +17,7 @@ export function Content() {
     console.log("handleIndexPlants");
     axios.get("http://localhost:3000/plants.json").then((response) => {
       console.log(response.data);
-      setPlants(response.data); //response.data.data[then the array of plant details]
+      setPlants(response.data.data); //response.data.data[then the array of plant details]
     });
   };
 
@@ -52,9 +53,17 @@ export function Content() {
 
   return (
     <div className="container">
-      <PlantsIndex plants={plants} />
-      <SchedulesCreate onCreateSchedule={handleCreateSchedule} />
-      <SchedulesIndex schedules={schedules} onShowSchedule={handleShowSchedule} />
+      <br />
+      <br />
+      <br />
+      <Routes>
+        <Route path="/plants" element={<PlantsIndex plants={plants} />} />
+        <Route path="/schedules/new" element={<SchedulesCreate onCreateSchedule={handleCreateSchedule} />} />
+        <Route
+          path="/schedules/show"
+          element={<SchedulesIndex schedules={schedules} onShowSchedule={handleShowSchedule} />}
+        />
+      </Routes>
       <Modal show={isSchedulesShowVisible} onClose={handleClose}>
         <SchedulesShow schedule={currentSchedule} />
       </Modal>

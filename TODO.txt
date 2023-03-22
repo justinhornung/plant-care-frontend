@@ -1,4 +1,4 @@
-FIRST! Modify PlantsIndex to work with the plantAPI
+DONE! FIRST! Modify PlantsIndex to work with the plantAPI
 
 1.  Fix the PlantsIndex.jsx page:
     * Make use of cards to display the PlantsIndex
