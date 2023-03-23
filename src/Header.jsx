@@ -1,10 +1,13 @@
+import { Link } from "react-router-dom";
+import { LogoutLink } from "./LogoutLink";
+
 export function Header() {
   return (
     <header>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            Hydro Helper
+            Plant Pal
           </a>
           <button
             className="navbar-toggler"
@@ -20,49 +23,43 @@ export function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <Link className="nav-link active" aria-current="page" to="/plants">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Link
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Dropdown
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Action
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Another action
-                    </a>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
-                    </a>
-                  </li>
-                </ul>
+                <Link className="nav-link" to="/plants">
+                  Plants
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link disabled">Disabled</a>
+                <Link className="nav-link" to="/schedules/new">
+                  Create Schedule
+                </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/schedules/show">
+                  My Schedules
+                </Link>
+              </li>
+              {localStorage.jwt === undefined ? (
+                <>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/signup">
+                      Become a member
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/login">
+                      Login
+                    </Link>
+                  </li>
+                </>
+              ) : (
+                <li className="nav-item">
+                  <LogoutLink className="nav-link" />
+                </li>
+              )}
             </ul>
             <form className="d-flex" role="search">
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
@@ -72,7 +69,6 @@ export function Header() {
             </form>
           </div>
         </div>
-        <a href="#">Home</a> | <a href="#">Link</a>
       </nav>
     </header>
   );

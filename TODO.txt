@@ -1,16 +1,16 @@
-DONE! FIRST! Modify PlantsIndex to work with the plantAPI
+[X] FIRST! Modify PlantsIndex to work with the plantAPI
 
-1.  Fix the PlantsIndex.jsx page:
-    * Make use of cards to display the PlantsIndex
-    * Only include a small pic, plant name, and "More Info" button
+[X] 1.  Fix the PlantsIndex.jsx page:
+    [X] Make use of cards to display the PlantsIndex
+    [X] Only include a small pic, plant name, and "More Info" button
 
 2.  Build PlantsShow.jsx
-    * Include a small button for "more info" inline with the plant selections
+    [X] Include a small button for "more info" inline with the plant selections
     * In that modal create a button to ScheduleCreate form
 
 3.  NavBar tweaks
 
-4.  Add React Router
+[X] 4.  Add React Router
     * Separate Plants from Schedules
 
 5.  Only allow currentUser to view their plant schedules.

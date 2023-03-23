@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
+
 html {
   scroll-behavior: smooth;
+}
+
+#root {
+  font-family: Arial, Helvetica, sans-serif;
+};
+
+.card img {
+  height: 300px;
+  object-fit: cover;
+};
+
+.navbar-brand {
+  font-family: 'Bungee Inline', cursive;
+  font-size: 4em !important;
 }
