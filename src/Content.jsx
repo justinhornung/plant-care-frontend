@@ -73,10 +73,7 @@ export function Content() {
   useEffect(handleIndexSchedules, []);
 
   return (
-    <div className="container">
-      <br />
-      <br />
-      <br />
+    <div className="container" mb-5>
       <Routes>
         <Route path="/plants" element={<PlantsIndex plants={plants} onShowPlant={handleShowPlant} />} />
         {/* <Route path="/plants/show" element={<PlantsIndex plants={plants}  />} /> */}

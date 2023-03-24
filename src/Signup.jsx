@@ -13,7 +13,7 @@ export function Signup() {
       .then((response) => {
         console.log(response.data);
         event.target.reset();
-        window.location.href = "/"; // Change this to hide a modal, redirect to a specific page, etc.
+        window.location.href = "/login"; // Change this to hide a modal, redirect to a specific page, etc.
       })
       .catch((error) => {
         console.log(error.response.data.errors);
@@ -30,19 +30,37 @@ export function Signup() {
         ))}
       </ul>
       <form onSubmit={handleSubmit}>
-        <div>
-          Name: <input name="name" type="text" />
+        <div className="form-floating sm-4 mb-3">
+          <input type="text" className="form-control" name="firstName" id="floatingInput" placeholder="firstName" />
+          <label for="floatingInput">First Name</label>
         </div>
-        <div>
-          Email: <input name="email" type="email" />
+        <div className="form-floating sm-4 mb-3">
+          <input type="email" className="form-control" name="email" id="floatingInput" placeholder="name@example.com" />
+          <label for="floatingInput">Email Address</label>
         </div>
-        <div>
-          Password: <input name="password" type="password" />
+        <div className="form-floating sm-4 mb-3">
+          <input
+            type="password"
+            className="form-control"
+            name="password"
+            id="floatingPassword"
+            placeholder="Password"
+          />
+          <label for="floatingPassword">Password</label>
         </div>
-        <div>
-          Password confirmation: <input name="password_confirmation" type="password" />
+        <div className="form-floating sm-4 mb-3">
+          <input
+            type="password"
+            className="form-control"
+            name="passwordConfirmation"
+            id="floatingPasswordConfirmation"
+            placeholder="PasswordConfirmation"
+          />
+          <label for="floatingPasswordConfirmation">Password Confirmation</label>
         </div>
-        <button type="submit">Signup</button>
+        <button type="submit" class="btn btn-success">
+          Submit
+        </button>
       </form>
     </div>
   );
