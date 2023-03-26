@@ -58,7 +58,7 @@ export function Signup() {
           />
           <label for="floatingPasswordConfirmation">Password Confirmation</label>
         </div>
-        <button type="submit" class="btn btn-success">
+        <button type="submit" className="btn btn-success">
           Submit
         </button>
       </form>

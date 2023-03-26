@@ -9,19 +9,31 @@ export function SchedulesCreate(props) {
     <div>
       <h1>New Schedule</h1>
       <form onSubmit={handleSubmit}>
-        <div>
-          Plant: <input name="Plant.name" type="text" />
+        <div className="form-floating sm-4 mb-3">
+          <input type="text" className="form-control" name="plant" id="floatingInput" placeholder="plant" />
+          <label for="floatingInput">Plant</label>
         </div>
-        <div>
-          Owner: <input name="User.name" type="text" />
+        <div className="form-floating sm-4 mb-3">
+          <input type="text" className="form-control" name="owner" id="floatingInput" placeholder="owner" />
+          <label for="floatingInput">Owner</label>
         </div>
-        <div>
-          Image: <input name="url" type="text" />
+        <div className="form-floating sm-4 mb-3">
+          <input type="text" className="form-control" name="image_url" id="floatingInput" placeholder="image" />
+          <label for="floatingInput">Image URL</label>
         </div>
-        <div>
-          Watering Start Date: <input name="watering_start_date" type="text" />
+        <div className="form-floating sm-4 mb-3">
+          <input
+            type="text"
+            className="form-control"
+            name="watering_start_date"
+            id="floatingInput"
+            placeholder="watering_start_date"
+          />
+          <label for="floatingInput">Watering Start Date</label>
         </div>
-        <button type="submit">Create Schedule!</button>
+        <button type="submit" className="btn btn-success">
+          Create Schedule!
+        </button>
       </form>
     </div>
   );
