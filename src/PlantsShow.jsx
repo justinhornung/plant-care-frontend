@@ -5,6 +5,9 @@ export function PlantsShow(props) {
       <p className="card-text">Sunlight Needs: {props.plant.sunlight ? props.plant.sunlight[0] : "No Data"}</p>
       <p className="card-text">Alt. Sunlight Needs: {props.plant.sunlight ? props.plant.sunlight[1] : "No Data"}</p>
       <p className="card-text">Watering: {props.plant.watering}</p>
+      <button type="submit" className="btn btn-success" onClick={() => props.onCreatePlantAndSchedule(props.plant)}>
+        Add to collection
+      </button>
     </div>
   );
 }

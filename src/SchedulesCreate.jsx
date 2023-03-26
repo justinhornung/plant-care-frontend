@@ -31,7 +31,7 @@ export function SchedulesCreate(props) {
           />
           <label for="floatingInput">Watering Start Date</label>
         </div>
-        <button type="submit" className="btn btn-success">
+        <button type="submit" className="btn btn-success" onClick={handleSubmit}>
           Create Schedule!
         </button>
       </form>

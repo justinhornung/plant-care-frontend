@@ -58,6 +58,29 @@ export function Content() {
     });
   };
 
+  const handleCreatePlantAndSchedule = (plant) => {
+    console.log("handleCreatePlantAndSchedule", plant);
+    let daysToWater = 7;
+    let amountOfSun = 4;
+    if (plant.watering === "Frequent") {
+      daysToWater = 1;
+    }
+    if (plant.sunlight[0] === "Full sun") {
+      amountOfSun = 1;
+    }
+    const params = {
+      name: plant.common_name,
+      amount_of_sun: amountOfSun,
+      days_to_water: daysToWater,
+    };
+    axios.post("http://localhost:3000/plants.json", params).then((response) => {
+      console.log(response.data);
+      // const scheduleParams = {};
+      // axios.post("http://localhost:3000/schedules.json", scheduleParams)
+      // setPlants(response.data.data);
+    });
+  };
+
   const handleShowSchedule = (schedule) => {
     console.log("handleShowSchedule", schedule);
     setIsSchedulesShowVisible(true);
@@ -86,7 +109,7 @@ export function Content() {
         />
       </Routes>
       <Modal show={isPlantsShowVisible} onClose={handleClosePlant}>
-        <PlantsShow plant={currentPlant} />
+        <PlantsShow plant={currentPlant} onCreatePlantAndSchedule={handleCreatePlantAndSchedule} />
       </Modal>
       <Modal show={isSchedulesShowVisible} onClose={handleCloseSchedule}>
         <SchedulesShow schedule={currentSchedule} />

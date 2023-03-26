@@ -6,7 +6,11 @@
 
 2.  Build PlantsShow.jsx
     [X] Include a small button for "more info" inline with the plant selections
-    * In that modal create a button to ScheduleCreate form
+    [X] In that modal create a button to ScheduleCreate form will create a plant and a schedule.
+    * When you create a schedule it will create a plant in my database from the API.
+    * Adds a watering schedule with an updatable start date.
+    * Call it "Add to Collection" or a variation.
+    * Hard code a plant with a schedule and a user with two post requests.
 
 3.  NavBar tweaks
 

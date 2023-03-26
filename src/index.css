@@ -7,7 +7,7 @@ html {
 #root {
   font-family: Arial, Helvetica, sans-serif;
   background: url("https://images.unsplash.com/photo-1446071103084-c257b5f70672?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2568&q=80") fixed center;
-  min-height: 100vh;
+  min-height: 100vh;  
 };
 
 .card img {
@@ -22,5 +22,5 @@ html {
 }
 
 h1 {
-  color: #1c7b47;
+  color: #e2725b;
 }

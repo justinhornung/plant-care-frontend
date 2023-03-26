@@ -29,17 +29,17 @@ export function Header() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/plants">
-                  Plants
+                  Plant Database
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/schedules/new">
-                  Create Schedule
+                  Add to Collection
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/schedules/show">
-                  My Schedules
+                  Plant Collection
                 </Link>
               </li>
               {localStorage.jwt === undefined ? (
