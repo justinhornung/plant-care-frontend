@@ -60,13 +60,34 @@ export function Content() {
 
   const handleCreatePlantAndSchedule = (plant) => {
     console.log("handleCreatePlantAndSchedule", plant);
-    let daysToWater = 7;
-    let amountOfSun = 4;
-    if (plant.watering === "Frequent") {
+    let daysToWater = 0;
+    let amountOfSun = 0;
+    if (plant.watering.toLowerCase === "frequent") {
       daysToWater = 1;
     }
-    if (plant.sunlight[0] === "Full sun") {
+    if (plant.watering.toLowerCase === "average") {
+      daysToWater = 2;
+    }
+    if (plant.watering.toLowerCase === "minimum") {
+      daysToWater = 3;
+    }
+    if (plant.watering.toLowerCase === "none") {
+      daysToWater = 4;
+    }
+    if (plant.watering.toLowerCase === "") {
+      daysToWater = 0;
+    }
+    if (plant.sunlight[0].toLowerCase === "full sun") {
       amountOfSun = 1;
+    }
+    if (plant.sunlight[0].toLowerCase === "part shade") {
+      amountOfSun = 2;
+    }
+    if (plant.sunlight[0].toLowerCase === "full shade") {
+      amountOfSun = 3;
+    }
+    if (plant.sunlight[0].toLowerCase === "") {
+      amountOfSun = 4;
     }
     const params = {
       name: plant.common_name,
@@ -75,9 +96,14 @@ export function Content() {
     };
     axios.post("http://localhost:3000/plants.json", params).then((response) => {
       console.log(response.data);
-      // const scheduleParams = {};
-      // axios.post("http://localhost:3000/schedules.json", scheduleParams)
-      // setPlants(response.data.data);
+      const scheduleParams = {
+        plant_id: response.data.id,
+        image_url: plant.default_image.small_url,
+      };
+      axios.post("http://localhost:3000/schedules.json", scheduleParams).then((response) => {
+        console.log(response.data);
+        window.location.href = "/schedules/show";
+      });
     });
   };
 
@@ -96,7 +122,7 @@ export function Content() {
   useEffect(handleIndexSchedules, []);
 
   return (
-    <div className="container" mb-5>
+    <div className="container mb-5">
       <Routes>
         <Route path="/plants" element={<PlantsIndex plants={plants} onShowPlant={handleShowPlant} />} />
         {/* <Route path="/plants/show" element={<PlantsIndex plants={plants}  />} /> */}
