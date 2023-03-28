@@ -6,7 +6,7 @@ export function Header() {
     <header>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <a id="logo" className="navbar-brand" href="#">
             Plant Pal
           </a>
           <button
