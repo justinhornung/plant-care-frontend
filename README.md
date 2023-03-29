@@ -1,1 +1,1 @@
-<iframe src="https://giphy.com/embed/MHJwwwrli6F4gxiOGr" width="480" height="306" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/MHJwwwrli6F4gxiOGr">via GIPHY</a></p>
+![Gif of application usage](PlantPalUsage.gif)
